@@ -18,11 +18,13 @@ Symbol = split_char('@#$%^&*')
 def Enter_password():
     for x in Rule:
         print(x)
-    Password = input("Enter password: ")
-    Password = split_char(Password.lower())
-    check_box(Password)
+    #Password = input("Enter password: ")
+    #Password = split_char(Password.lower())
+    check_box()
 
-def check_box(password):
+def check_box():
+    password = input("Enter password: ")
+    password = split_char(password.lower())
     three_check = []
     for x in password:
         if x in Alphabates:
@@ -39,7 +41,8 @@ def check_box(password):
     if len(password) < 8 or len(password) > 20 or len(three_check) < 3:
         print("Not a valid password.")
         print("Try again.")
-        Enter_password()
+        #Enter_password()
+        check_box()
     else:
         print("***Valid Password***")
         print("Thanks for your interest.")
